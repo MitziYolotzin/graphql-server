@@ -4,7 +4,12 @@ const app = express();
 const express_graphql = require('express-graphql');
 const { buildSchema} = require('graphql');
 
-const schema = buildSchema();
+//que tipo de consulta puedo hacer a los datos
+const schema = buildSchema(`
+    type Query{
+        message: String
+    }
+`);
 
 //que puede consultar desde root
 //definir métodos a través de funciones
