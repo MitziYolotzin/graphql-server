@@ -5,6 +5,7 @@ const express_graphql = require('express-graphql');
 const { buildSchema} = require('graphql');
 
 //que tipo de consulta puedo hacer a los datos
+//como se vera el schema de los datos
 const schema = buildSchema(`
     type Query{
         message: String
@@ -23,7 +24,7 @@ const root = {
 //definir la interfaz de consulta
 app.use('/graphql', express_graphql({
     schema: schema,
-    root: root,
+    rootValue: root,
     graphiql: true
 }));
 
